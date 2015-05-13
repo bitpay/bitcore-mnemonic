@@ -36,7 +36,7 @@
     "chai": "^1.10.0",
     "gulp": "^3.8.10"
   },
-  "dependencies": {
+  "peerDependencies": {
     "bitcore": "^0.12.0"
   }
 }
