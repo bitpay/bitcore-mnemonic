@@ -30,7 +30,7 @@ describe('Mnemonic', function() {
 
       it('should fail with unknown word list', function() {
         (function() {
-          return new Mnemonic('pilote foster august tomorrow kit daughter unknown awesome model town village master');
+          return new Mnemonic('pilots foster august tomorrow kit daughter unknown awesome model town village master');
         }).should.throw(errors.Mnemonic.UnknownWordlist);
       });
 
@@ -90,6 +90,11 @@ describe('Mnemonic', function() {
       Mnemonic.Words.CHINESE[0].should.equal('的');
     });
 
+    it('french wordlist is complete', function() {
+      Mnemonic.Words.FRENCH.length.should.equal(2048);
+      Mnemonic.Words.FRENCH[0].should.equal('abaisser');
+    });
+
     it('allows use different phrase lengths', function() {
       var mnemonic;
 
@@ -121,6 +126,9 @@ describe('Mnemonic', function() {
 
       var invalid3 = Mnemonic.isValid('totally invalid phrase');
       invalid3.should.equal(false);
+
+      var valid2 = Mnemonic.isValid('caution opprimer époque belote devenir ficeler filleul caneton apologie nectar frapper fouiller');
+      valid2.should.equal(true);
     });
 
     it('has a toString method', function() {
