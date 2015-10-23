@@ -7,12 +7,14 @@ Mnemonics is implemented as a separate module and you must add it to your depend
 For node projects:
 
 ```
+npm install bitcore-lib --save
 npm install bitcore-mnemonic --save
 ```
 
 For client-side projects:
 
 ```
+bower install bitcore-lib --save
 bower install bitcore-mnemonic --save
 ```
 
@@ -20,6 +22,7 @@ bower install bitcore-mnemonic --save
 For creating a new random mnemonic code you just create a new instance.
 
 ```javascript
+var bitcore = require('bitcore-lib');
 var Mnemonic = require('bitcore-mnemonic');
 var code = new Mnemonic();
 
