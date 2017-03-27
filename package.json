@@ -1,5 +1,5 @@
 {
-  "name": "bitcore-mnemonic",
+  "name": "bitcore-mnemonic-zcash",
   "version": "1.2.2",
   "description": "BIP39 Mnemonics implemented for Bitcore.",
   "author": "BitPay <dev@bitpay.com>",
@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitpay/bitcore-mnemonic.git"
+    "url": "https://github.com/skyl/bitcore-mnemonic.git"
   },
   "keywords": [
     "bitcoin",
@@ -38,7 +38,7 @@
     "mocha": "^2.2.5"
   },
   "dependencies": {
-    "bitcore-lib": "^0.14.0",
+    "bitcore-lib-zcash": "str4d/bitcore-lib-zcash",
     "unorm": "^1.3.3"
   }
 }
