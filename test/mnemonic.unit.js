@@ -67,6 +67,11 @@ describe('Mnemonic', function() {
         mnemonic.wordlist.should.equal(Mnemonic.Words.SPANISH);
       });
 
+      it('constructor should detect standard wordlist even if all words contained in 2 wordlists', function() {
+        var mnemonic = new Mnemonic('abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon brave');
+        mnemonic.wordlist.should.equal(Mnemonic.Words.FRENCH);
+      });
+
     });
 
 
@@ -138,6 +143,17 @@ describe('Mnemonic', function() {
       invalid3.should.equal(false);
 
       var valid2 = Mnemonic.isValid('caution opprimer époque belote devenir ficeler filleul caneton apologie nectar frapper fouiller');
+      valid2.should.equal(true);
+    });
+    
+    it('validates phrases that match multiple wordlists', function() {
+      var valid = Mnemonic.isValid('abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon brave');
+      valid.should.equal(true);
+
+      var invalid = Mnemonic.isValid('abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon brave', Mnemonic.Words.ENGLISH);
+      invalid.should.equal(false);
+
+      var valid2 = Mnemonic.isValid('abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon brave', Mnemonic.Words.FRENCH);
       valid2.should.equal(true);
     });
 
